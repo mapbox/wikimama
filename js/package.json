@@ -1,0 +1,18 @@
+{
+  "name": "ajdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "augment_wikidata_csv.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-write-stream": "^2.0.0",
+    "csv2json": "^1.1.0",
+    "lodash": "^4.16.4",
+    "minimist": "^1.2.0",
+    "request": "^2.75.0"
+  }
+}

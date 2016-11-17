@@ -1,0 +1,21 @@
+[
+{"QID":"Q532","Label":"Village","WD Class":"Rural Settlement"}
+,
+{"QID":"Q5084","Label":"Hamlet","WD Class":"Rural Settlement"}
+,
+{"QID":"Q15253706","Label":"City","WD Class":"Human Settlement"}
+,
+{"QID":"Q3957","Label":"Town","WD Class":"Human Settlement"}
+,
+{"QID":"Q3257686","Label":"Locality","WD Class":"Human Settlement"}
+,
+{"QID":"Q123705","Label":"Neighborhood","WD Class":"Human Settlement"}
+,
+{"QID":"Q515","Label":"City","WD Class":"Human Settlement"}
+,
+{"QID":"Q702492","Label":"Urban Area","WD Class":"Human Settlement"}
+,
+{"QID":"Q188509","Label":"Suburb","WD Class":"Human Settlement"}
+,
+{"QID":"Q1907114","Label":"Metropolitan Area","WD Class":"Human Settlement"}
+]

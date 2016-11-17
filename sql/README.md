@@ -1,4 +1,4 @@
-## Import the Wikidata dump into a database
+## Import the Wikidata dump
 
 Create a postgres database
 ```
@@ -16,6 +16,8 @@ Import the postgres dump of the wikidata db, got from s3:
 
 `pg_restore -d wikidata -Fc wikidata.dump`
 
+## Import the OSM features to match
+
 Run script to create table to hold OSM data:
 
 `psql -d wikidata -f create_table.sql`
@@ -27,6 +29,8 @@ Import OSM data that you wish to match:
 
 The OSM CSV file should contain columns as such: osm_id, qid, type, name, name_en, lon, lat.
 
+
+## Match the OSM features to Wikidata
 Prepare tables - this runs some geometry transformations, creates indexes, etc.:
 
 `psql -d wikidata -f prepare_tables.sql`

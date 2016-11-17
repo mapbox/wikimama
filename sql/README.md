@@ -1,6 +1,16 @@
-First, create a database:
+## Import the Wikidata dump into a database
 
-`createdb wikidata`
+Create a postgres database
+```
+createdb wikidata
+psql -d wikidata
+```
+
+Add postgis extension inside the psql prompt
+```
+create extension postgis;
+\q;
+```
 
 Import the postgres dump of the wikidata db, got from s3:
 

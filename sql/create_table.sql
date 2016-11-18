@@ -5,9 +5,11 @@ CREATE TABLE osm (
 
   qid TEXT NULL,
 
-  type TEXT,
+  type TEXT NULL,
 
-  name TEXT,
+  admin TEXT NULL,
+
+  name TEXT NULL,
 
   name_en TEXT NULL,
 

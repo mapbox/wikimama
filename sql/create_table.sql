@@ -3,6 +3,8 @@ CREATE TABLE osm (
 
   osm_id DOUBLE PRECISION,
 
+  osm_type TEXT NULL,
+
   qid TEXT NULL,
 
   type TEXT NULL,

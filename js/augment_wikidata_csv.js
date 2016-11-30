@@ -186,5 +186,24 @@ function getWikidataLinks(qid, data) {
 }
 
 function getJOSMLink(qid, osmData) {
-    return 'http://localhost:8111/load_object?new_layer=true&objects=n' + osmData.osm_id + '&addtags=wikidata=' + qid;
+	var osmType;
+	if (osmData.osm_type === 'node') {
+		osmType = 'n';
+	}
+
+	else if (osmData.osm_type === 'way') {
+		osmType = 'w';
+	}
+
+	else if (osmData.osm_type === 'relation') {
+		osmType = 'r';
+
+	}
+
+	else {
+		throw new Error ('osm type invalid!');
+	}
+
+	
+    return 'http://localhost:8111/load_object?new_layer=true&objects=' + osmType + osmData.osm_id + '&addtags=wikidata=' + qid;
 }

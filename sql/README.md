@@ -25,6 +25,7 @@ Run script to create table to hold OSM data:
 Import OSM data that you wish to match:
 
 `psql -d wikidata`
+
 `COPY osm FROM '/full/path/to/file.csv' CSV DELIMITER ',' HEADER;`
 
 The OSM CSV file should contain columns as such: osm_id, qid, type, name, name_en, lon, lat.

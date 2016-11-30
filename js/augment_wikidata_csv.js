@@ -4,6 +4,7 @@ var queue = require('d3-queue').queue;
 var csvWriter = require('csv-write-stream');
 var fields = [
     'osm_id',
+    'osm_type',
     'qid',
     'JOSM',
     'wikidata',
@@ -73,6 +74,7 @@ fs.createReadStream(inputCsv)
 function writeRow(data) {
     var arr = [
         data.osm_id,
+        data.osm_type,
         data.qid,
         data.JOSM,
         data.wikidataURL,

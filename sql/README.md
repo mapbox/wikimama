@@ -1,3 +1,5 @@
+# Uses SQL to find potential Wikidata matches to OSM features.
+
 ## Import the Wikidata dump
 
 Create a postgres database
@@ -45,5 +47,5 @@ Output this created table as CSV:
 `psql -d wikidata`  
 `COPY exact_matches_canonical_name TO '<full/output/path/filename.csv>' CSV HEADER;`
 
-Once we have this outputted CSV, we can run the scripts in the `js` folder to augment it with additional data from `wikidata` using the API. Look at the README in the `js` folder for further instructions.
+Once we have this output CSV, we can run the scripts in the `js` folder to augment it with additional data from `wikidata` using the API. Look at the README in the `js` folder for further instructions.
 

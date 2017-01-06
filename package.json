@@ -1,0 +1,25 @@
+{
+  "name": "wikimama",
+  "version": "1.0.0",
+  "description": "This repo contains scripts to aid in manually matching OSM IDs to Wikidata IDs. Look in the `sql` and `js` folders for further documentation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/wikimama.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapbox/wikimama/issues"
+  },
+  "homepage": "https://github.com/mapbox/wikimama#readme",
+  "dependencies": {
+    "json2csv": "^3.7.3",
+    "minimist": "^1.2.0",
+    "query-overpass": "^1.1.0",
+    "turf": "^3.0.14"
+  }
+}

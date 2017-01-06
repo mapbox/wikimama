@@ -1,8 +1,5 @@
 /*
-node query-overpass.js --lonlat 0.0879,51.4904 --radius 10
-
-Queries Overpass for OSM features. See query.ql for the query. Radius is in kilometers.
-Exports the results as a CSV to stdout.
+Queries Overpass for OSM features. See query.ql for the query. Radius is in kilometers. Returns results as CSV.
 */
 
 var overpass = require('query-overpass');

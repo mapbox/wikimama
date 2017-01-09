@@ -37,13 +37,13 @@ reader_osm = csvReader(input_osm)
 fieldnames = ['score','osm_name', 'osm_id', 'distance','placeLabel','place', 'location']
 
 count = 0
+final = []
 
 for osm_l in reader_osm:
     count += 1
     wiki_arr = []
     choices = []
     mapping = {}
-    final = []
     if osm_l['wikidata'] == "":
         reader_wiki = csvReader(input_wiki)
         for wiki_l in reader_wiki:
@@ -80,8 +80,7 @@ for osm_l in reader_osm:
                     entry['osm_id'] = osm_l['id']
 
                 final.extend(mapping[score[0]])
-    if len(final) > 0:
-        a = np.array(final)
-        _, idx = np.unique(a, return_index=True)
-        print a[np.sort(idx)]
-fr.close()
+if len(final) > 0:
+    a = np.array(final)
+    _, idx = np.unique(a, return_index=True)
+    print a[np.sort(idx)].tolist()

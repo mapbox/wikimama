@@ -2,6 +2,9 @@
 
 This repo contains scripts to aid in manually matching OSM IDs to Wikidata IDs.
 
+### Requirement
+Node version >= 6
+
 ### Setup
 
 1. `npm link`

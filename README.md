@@ -1,4 +1,4 @@
-### OSM <-> Wikidata matching
+# OSM <-> Wikidata matching
 
 This repo contains scripts to aid in manually matching OSM IDs to Wikidata IDs.
 

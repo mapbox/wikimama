@@ -87,8 +87,9 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
                 if (code !== 0) {
                   return console.log(`matching script exited with code ${code}`);
                 }
-                fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
-                fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
+                // dont remove temp files for now
+                // fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
+                // fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
                 callback(null, result);
             });
 

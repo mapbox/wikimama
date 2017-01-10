@@ -9,7 +9,7 @@ var queryWikidata = require('./query-wikidata');
 var json2csv = require('json2csv');
 var input = linebyline(__dirname + '/' + argv.file);
 var d3 = require('d3-queue');
-var q = d3.queue(1);
+var q = d3.queue(2);
 
 input.on('line', function (line, lineCount) {
   var line = line.split(',');
@@ -40,7 +40,7 @@ input.on('end', function (err) {
 });
 
 input.on('error', function(error) {
-  console.log(error);
+  console.log('input error', error);
 });
 
 function getData(name, x, y, wikidata, radius, threshold, callback) {
@@ -51,24 +51,26 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
     var wikiData;
     queryOverpass(x, y, radius, function (err, d) {
         if (err) {
-            return console.log(err);
+            return console.log('overpass error', err);
         }
         osmData = d;
 
         fs.writeFile(name + '_osm.csv', osmData, function (err) {
             if (err) {
-                return console.log(err);
+                return console.log('osm file write error', err);
             }
         });
 
         // wikidata
         queryWikidata(wikidata, radius, function (err, d) {
-            if (err) console.log(err);
+            if (err) {
+                return console.log('wiki error', err);
+            }
             wikiData = d;
 
             fs.writeFile(name + '_wiki.csv', wikiData, function (err) {
                 if (err) {
-                    return console.log(err);
+                    return console.log('wiki file write error', err);
                 }
             });
 
@@ -79,6 +81,9 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
                 result += data.toString();
             });
             command.on('close', function (code) {
+                if (code !== 0) {
+                  return console.log(`matching script exited with code ${code}`);
+                }
                 fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
                 fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
                 callback(null, result);

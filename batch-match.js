@@ -19,22 +19,23 @@ input.on('line', function (line, lineCount) {
   wikidata = line[3],
   radius = Number(line[4]),
   threshold = Number(line[5]);
-  console.log(name);
   q.defer(getData, name, x, y, wikidata, radius, threshold);
 });
 
 input.on('end', function (err) {
     q.awaitAll(function (err, results) {
       if (err) throw err;
-      // array of array of objects
-      // 
-      for (var i = 0 ; i < results.length; i++) {
-        var resultArray = JSON.parse(JSON.stringify(results[i]));
-        console.log(resultArray);
-        // for (var j = 0; j < resultArray.length; j++) {
-        //   console.log(resultArray[j] ,'\n');
-        // }
+      var finalArray = [];
+      for (var i = 0; i < results.length; i++) {
+          var resultArray = JSON.parse(results[i]);
+          finalArray = finalArray.concat(resultArray);
       }
+      var fields = ['distance', 'score', 'osm_name', 'placeLabel', 'place', 'location', 'osm_id'];
+      var csv = json2csv({ data: finalArray, fields: fields });
+      fs.writeFile('output.csv', csv, function(err) {
+        if (err) throw err;
+        console.log('file saved');
+      });
     });
 });
 
@@ -44,7 +45,7 @@ input.on('error', function(error) {
 
 function getData(name, x, y, wikidata, radius, threshold, callback) {
 
-    console.log('getData', name);
+    // console.log('getData', name);
     // overpass
     var osmData;
     var wikiData;
@@ -78,8 +79,8 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
                 result += data.toString();
             });
             command.on('close', function (code) {
-                fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
-                fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
+                // fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
+                // fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
                 callback(null, result);
             });
 

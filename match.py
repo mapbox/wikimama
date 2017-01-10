@@ -78,9 +78,8 @@ for osm_l in reader_osm:
                     entry['score'] = score[1]
                     entry['osm_name'] = name
                     entry['osm_id'] = osm_l['id']
-
                 final.extend(mapping[score[0]])
 if len(final) > 0:
     a = np.array(final)
     _, idx = np.unique(a, return_index=True)
-    print a[np.sort(idx)].tolist()
+    print json.dumps(a[np.sort(idx)].tolist(), separators=(',',':'))

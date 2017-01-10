@@ -51,7 +51,7 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
     var wikiData;
     queryOverpass(x, y, radius, function (err, d) {
         if (err) {
-            console.log(err);
+            return console.log(err);
         }
         osmData = d;
 

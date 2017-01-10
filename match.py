@@ -34,7 +34,7 @@ def csvReader(csv_file):
 
 reader_osm = csvReader(input_osm)
 
-fieldnames = ['score','osm_name', 'osm_id', 'distance','placeLabel','place', 'location']
+fieldnames = ['score','osm_name', 'osm_id', 'distance','place_label','place', 'location']
 
 count = 0
 final = []
@@ -48,7 +48,7 @@ for osm_l in reader_osm:
         reader_wiki = csvReader(input_wiki)
         for wiki_l in reader_wiki:
             place = wiki_l['place']
-            placeLabel = wiki_l['placeLabel']
+            place_label = wiki_l['place_label']
             location = wiki_l['location']
             pt = shapely.wkt.loads(location)
             gt = geojson.Feature(geometry=pt, properties={})
@@ -57,12 +57,12 @@ for osm_l in reader_osm:
             wiki_l["distance"] = distance
             if distance <= threshold:
                 wiki_arr.append(wiki_l)
-                choices.append(placeLabel)
-                if placeLabel in mapping:
-                    mapping[placeLabel].append(wiki_l)
+                choices.append(place_label)
+                if place_label in mapping:
+                    mapping[place_label].append(wiki_l)
                 else:
-                    mapping[placeLabel] = []
-                    mapping[placeLabel].append(wiki_l)
+                    mapping[place_label] = []
+                    mapping[place_label].append(wiki_l)
         name = ""
         if 'name:en' in osm_l and osm_l['name:en'] != "":
             osm_l['name:en'] = osm_l['name:en'].decode('utf-8')

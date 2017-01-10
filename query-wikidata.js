@@ -1,7 +1,7 @@
 var wdk = require('wikidata-sdk');
 var request = require('request');
 var json2csv = require('json2csv');
-var fields = ['place', 'placeLabel', 'location'];
+var fields = ['place', 'place_label', 'location'];
 var uniqBy = require('lodash.uniqby');
 
 function queryWikidata(wikidataId, radius, callback) {
@@ -38,7 +38,7 @@ function queryWikidata(wikidataId, radius, callback) {
         var count = 0;
         bindings.forEach(function (binding) {
           bindings[count]['place'] = binding['place']['value'];
-          bindings[count]['placeLabel'] = binding['placeLabel']['value'];
+          bindings[count]['place_label'] = binding['placeLabel']['value'];
           bindings[count]['location'] = binding['location']['value'];
           count += 1;
         });

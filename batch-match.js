@@ -30,7 +30,7 @@ input.on('end', function (err) {
           var resultArray = JSON.parse(results[i]);
           finalArray = finalArray.concat(resultArray);
       }
-      var fields = ['distance', 'score', 'osm_name', 'placeLabel', 'place', 'location', 'osm_id'];
+      var fields = ['distance', 'score', 'osm_name', 'place_label', 'place', 'location', 'osm_id'];
       var csv = json2csv({ data: finalArray, fields: fields });
       fs.writeFile('output.csv', csv, function(err) {
         if (err) throw err;

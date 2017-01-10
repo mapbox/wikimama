@@ -79,8 +79,8 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
                 result += data.toString();
             });
             command.on('close', function (code) {
-                // fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
-                // fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
+                fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
+                fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
                 callback(null, result);
             });
 

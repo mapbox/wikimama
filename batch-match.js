@@ -80,6 +80,9 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
             command.stdout.on('data', function (data) {
                 result += data.toString();
             });
+            command.stderr.on('data', function (trace) {
+              process.stderr.write(trace.toString());
+            });
             command.on('close', function (code) {
                 if (code !== 0) {
                   return console.log(`matching script exited with code ${code}`);

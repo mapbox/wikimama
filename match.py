@@ -53,7 +53,7 @@ for osm_l in reader_osm:
             pt = shapely.wkt.loads(location)
             gt = geojson.Feature(geometry=pt, properties={})
             wiki_geojson = shapely.geometry.shape(gt.geometry)
-            distance = vincenty((osm_l['lat'],osm_l['lon']),(wiki_geojson.centroid.x, wiki_geojson.centroid.y)).km
+            distance = vincenty((osm_l['lon'], osm_l['lat']),(wiki_geojson.centroid.x, wiki_geojson.centroid.y)).km
             wiki_l["distance"] = distance
             if distance <= threshold:
                 wiki_arr.append(wiki_l)

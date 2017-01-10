@@ -24,7 +24,7 @@ input.on('line', function (line, lineCount) {
 
 input.on('end', function (err) {
     q.awaitAll(function (err, results) {
-      if (err) throw err;
+      if (err) console.log(err);
       var finalArray = [];
       for (var i = 0; i < results.length; i++) {
           var resultArray = JSON.parse(results[i]);
@@ -51,26 +51,26 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
     var wikiData;
     queryOverpass(x, y, radius, function (err, d) {
         if (err) {
-            return console.log('overpass error', err);
+            return callback('overpass error', null);
         }
         osmData = d;
 
         fs.writeFile(name + '_osm.csv', osmData, function (err) {
             if (err) {
-                return console.log('osm file write error', err);
+                return callback('osm file write error', null);
             }
         });
 
         // wikidata
         queryWikidata(wikidata, radius, function (err, d) {
             if (err) {
-                return console.log('wiki error', err);
+                return callback('wiki error', null);
             }
             wikiData = d;
 
             fs.writeFile(name + '_wiki.csv', wikiData, function (err) {
                 if (err) {
-                    return console.log('wiki file write error', err);
+                    return callback('wiki file write error', null);
                 }
             });
 
@@ -85,7 +85,7 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
             });
             command.on('close', function (code) {
                 if (code !== 0) {
-                  return console.log(`matching script exited with code ${code}`);
+                  return callback('matching script exited', null);
                 }
                 // dont remove temp files for now
                 // fs.unlinkSync(__dirname + '/' + name + '_osm.csv');

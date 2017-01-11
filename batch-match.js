@@ -27,10 +27,9 @@ input.on('end', function (err) {
       if (err) console.log(err);
       var finalArray = [];
       for (var i = 0; i < results.length; i++) {
-          var resultArray = JSON.parse(results[i]);
-          finalArray = finalArray.concat(resultArray);
+          finalArray = finalArray.concat(results[i]);
       }
-      var fields = ['distance', 'score', 'osm_name', 'place_label', 'place', 'location', 'osm_id'];
+      var fields = ['city', 'distance', 'score', 'osm_name', 'place_label', 'place', 'location', 'osm_id'];
       var csv = json2csv({ data: finalArray, fields: fields });
       fs.writeFile('output.csv', csv, function(err) {
         if (err) throw err;
@@ -90,6 +89,10 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
                 // dont remove temp files for now
                 // fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
                 // fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
+                result = JSON.parse(result);
+                for (var i = 0; i < result.length; i++) {
+                    result[i]['city'] = name;
+                }
                 callback(null, result);
             });
 

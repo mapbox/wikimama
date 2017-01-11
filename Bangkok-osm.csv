@@ -1,0 +1,101 @@
+City,type,id,lon,lat,place,name,name:en
+Bangkok,node,340034820,100.4949589,13.7611729,neighbourhood,บางลำพู,Banglamphu
+Bangkok,node,340165036,100.5089484,13.741907,neighbourhood,เยาวราช,Yaowarat
+Bangkok,node,485662295,100.5344867,13.6605541,suburb,พระประแดง,Phra Pradaeng
+Bangkok,node,485865234,100.5358513,13.7200471,neighbourhood,ทุ่งมหาเมฆ,Thung Maha Mek
+Bangkok,node,485865239,100.5220756,13.7098976,neighbourhood,วัดดอน,Wat Don
+Bangkok,node,893975239,100.5524342,13.8651548,neighbourhood,,Garden City Lagoon
+Bangkok,node,1215714268,100.0357907,13.8135093,neighbourhood,ปฐมทองซิตี้,Pathom Thong Siti
+Bangkok,node,1215714269,100.037105,13.8101753,neighbourhood,หมู่บ้านชมภูนิเวศน์,Muban Chom Phu Niwet
+Bangkok,node,1221150401,100.2572449,13.7415527,suburb,ท่าตลาด,Tha Talat
+Bangkok,node,1223885182,100.1756141,13.7909833,suburb,ท่าตำหนัก,Tha Tamnak
+Bangkok,node,1223888269,100.1605082,13.8086799,suburb,ศรีษะทอง,Sisa Thong
+Bangkok,node,1224342864,100.1717147,13.7876591,suburb,บางแก้ว,Bang Kaeo
+Bangkok,node,1226375750,100.0754658,13.8275788,suburb,บ่อพลับ,Bo Phlap
+Bangkok,node,1230207241,100.1314371,13.7935821,suburb,พะเนียด,Pha Niat
+Bangkok,node,1230209084,100.1146894,13.8120706,suburb,ธรรมศาลา,Tham Sala
+Bangkok,node,1233621053,100.2067466,13.7148974,suburb,บางช้าง,Bang Chang
+Bangkok,node,1233632638,100.2429867,13.7005343,suburb,ท่าข้าม,Tha Kham
+Bangkok,node,1233695714,100.2055825,13.7231824,suburb,คลองใหม่,Khlong Mai
+Bangkok,node,1245404677,100.2577973,13.7200734,suburb,ยายชา,
+Bangkok,node,1245783762,100.0195187,13.6418582,suburb,โพหัก,Pho Hak
+Bangkok,node,1271887267,100.3657308,13.5970384,suburb,บางน้ำจืด,Bang Namchuet
+Bangkok,node,1278005273,100.3923033,13.6942212,neighbourhood,หลักสอง,Lak Song
+Bangkok,node,1524353680,100.4380554,13.6179907,neighbourhood,ท่าข้าม,Tha Kam
+Bangkok,node,1537804250,100.0506235,13.8093675,suburb,สนามจันทร์,
+Bangkok,node,1564684425,100.0361717,13.8121597,suburb,ลำพยา,Lam Phaya
+Bangkok,node,1593649414,99.9776156,13.4167005,neighbourhood,หมู่บ้านเฉลิมพระเกียรติ ร.๙,Muban Chaloemphrakiat Ro 9
+Bangkok,node,1870876692,100.4293889,13.7122189,neighbourhood,ชุมชนตานเรือ,Chumchon Tan Ruea
+Bangkok,node,1881943721,100.4467523,13.7153522,neighbourhood,ชุมชนหลังโรงน้ำตาลนิวกว้างสุ้นหลี,Chumchon Lang Rong Namtan Nio Kwang Sun Li
+Bangkok,node,1892739889,100.4516188,13.7199072,neighbourhood,ชุมชนเพชรเกษม 40,Chumchon Phet Kasem 40
+Bangkok,node,1892801846,100.4500013,13.7201601,neighbourhood,ชุมชนเพชรเกษม 42,Chumchon Phet Kasem 42
+Bangkok,node,1987901686,100.675692,13.7776505,neighbourhood,สัมมากร,Sammakon
+Bangkok,node,1987901949,100.6787497,13.780193,neighbourhood,ริมสวน,Rim Suan
+Bangkok,node,1992315713,100.5282107,13.6835718,neighbourhood,บางโพงพาง,Bang Phong Phang
+Bangkok,node,2111822160,100.4439346,13.7662875,neighbourhood,Golden Heritage,
+Bangkok,node,2111828265,100.4449268,13.7677416,neighbourhood,นุราสิริ ราชพฤกษ์,Busasiri Ratchapruk
+Bangkok,node,2111828266,100.4442346,13.7596395,neighbourhood,ลดาวัลย์,Ladawan
+Bangkok,node,2111828267,100.4440575,13.7620884,neighbourhood,ชวนชื่น รีเจนท์,ChuanChuen Regent
+Bangkok,node,2111828270,100.4454341,13.7627499,neighbourhood,พฤกษ์ภิรมย์ ราชพฤกษ์-สาทร,Prukpirom Ratchapruk-Sathon
+Bangkok,node,2111828273,100.4448354,13.77055,neighbourhood,Bangkok Boulevard,
+Bangkok,node,2111828274,100.4454233,13.7619107,neighbourhood,ธีรินทร์ ราชพฤกษ์,Teerin-Ratchapruk
+Bangkok,node,2203963656,100.5330851,13.745782,neighbourhood,สยาม,Siam
+Bangkok,node,2203974487,100.5650732,13.7338401,neighbourhood,สุขุมวิท,Sukhumvit
+Bangkok,node,2313566422,100.5614449,13.7366488,neighbourhood,อโศก,Asok
+Bangkok,node,2313566430,100.4975018,13.7458635,neighbourhood,บ้านหม้อ,Ban Mo
+Bangkok,node,2313566436,100.5024955,13.7684267,neighbourhood,บางขุนพรหม,Bang Khun Phrom
+Bangkok,node,2313566437,100.5237558,13.7474163,neighbourhood,เจริญผล,Charoen Phon
+Bangkok,node,2313566441,100.516535,13.7378257,neighbourhood,หัวลำโพง,Hua Lamphong
+Bangkok,node,2313566442,100.5755958,13.8397292,neighbourhood,แยกเกษตร,Kaset Junction
+Bangkok,node,2313566444,100.5202859,13.7976127,neighbourhood,เกียกกาย,Kiak Kai
+Bangkok,node,2313566445,100.4932935,13.7386472,neighbourhood,กุฎีจีน,Kudi Chin
+Bangkok,node,2313566448,100.5133508,13.7633742,neighbourhood,นางเลิ้ง,Nang Loeng
+Bangkok,node,2313566450,100.49351,13.7623811,neighbourhood,พระอาทิตย์,Phra Athit
+Bangkok,node,2313566451,100.5721035,13.7685179,neighbourhood,รัชดา,Ratchada
+Bangkok,node,2313566454,100.5223473,13.7796435,neighbourhood,ราชวัตร,Ratchawat
+Bangkok,node,2313566455,100.5681089,13.8270285,neighbourhood,รัชโยธิน,Ratchayothin
+Bangkok,node,2313566456,100.5363168,13.7290272,neighbourhood,ศาลาแดง,Sala Daeng
+Bangkok,node,2313566458,100.5059444,13.7407482,neighbourhood,สำเพ็ง,Sampheng
+Bangkok,node,2313566460,100.5014719,13.7522538,neighbourhood,เสาชิงช้า,Sao Chingcha
+Bangkok,node,2313566462,100.5302755,13.7218913,neighbourhood,สาทร,Sathon
+Bangkok,node,2313566466,100.4888347,13.7525853,neighbourhood,ท่าช้าง,Tha Chang
+Bangkok,node,2313566468,100.4910504,13.7457257,neighbourhood,ท่าเตียน,Tha Tien
+Bangkok,node,2313566469,100.494822,13.6951361,neighbourhood,ถนนตก,Thanon Tok
+Bangkok,node,2313566470,100.5235112,13.7562111,neighbourhood,อุรุพงษ์,Uruphong
+Bangkok,node,2313566471,100.5381109,13.7646269,neighbourhood,อนุสาวรีย์ชัยสมรภูมิ,Victory Monument
+Bangkok,node,2313566472,100.5020841,13.7457153,neighbourhood,วังบูรพา,Wang Burapha
+Bangkok,node,2313566473,100.4851144,13.7551801,neighbourhood,วังหลัง,Wang Lang
+Bangkok,node,2313566474,100.5032881,13.7642678,neighbourhood,วิสุทธิกษัตริย์,Wisutkasat
+Bangkok,node,2313566475,100.5466538,13.7382238,neighbourhood,วิทยุ,Witthayu
+Bangkok,node,2313566476,100.5218899,13.8223657,neighbourhood,วงศ์สว่าง,Wong Sawang
+Bangkok,node,2313566477,100.5205074,13.7572748,neighbourhood,ยมราช,Yommarat
+Bangkok,node,2313566478,100.5159291,13.7484978,neighbourhood,ยศเส,Yotse
+Bangkok,node,2418075349,100.3242011,13.7001042,suburb,อ้อมน้อย,Om Noi
+Bangkok,node,3010364199,100.7633393,13.8406246,neighbourhood,กฤษดานคร 25,Krit Da Nakhon 25
+Bangkok,node,3225238798,100.651278,13.7962527,neighbourhood,ชุมชนสันติอโศก,Chumchon Santi Asok
+Bangkok,node,3226633439,100.3219167,13.55807,neighbourhood,Best Ocean Airpark & Golf,
+Bangkok,node,3265832099,100.5129571,13.7340529,neighbourhood,ตลาดน้อย,Talat Noi
+Bangkok,node,3278153567,100.4073108,13.9131512,neighbourhood,หมู่บ้านลุมพินี,Mu Ban Lumphini
+Bangkok,node,3386108746,100.6688824,13.8214981,neighbourhood,หมู่บ้าน บางกอก บูเลอวาร์ด รามอินทรา,Bangkok Boulevard Ramintra
+Bangkok,node,3497699969,100.5130353,13.7372252,neighbourhood,โอเดียน,Odeon
+Bangkok,node,3667984674,100.5705833,13.584621,neighbourhood,หมู่บ้านปิยะพัฒนา,Muban Pi Ya Phatthana
+Bangkok,node,3667984776,100.57177,13.5817779,neighbourhood,โครงการเอื้ออาธรณ์ ซอยหมอบาง,Khrongkan Uea A Thon Soi Mo Bang
+Bangkok,node,3667994345,100.5763394,13.5866963,neighbourhood,หมู่บ้านเมืองป้อมปราการ,Muban Mueang Pomprakan
+Bangkok,node,3805458803,100.4916674,13.8423324,neighbourhood,ท่าน้ำนนทบุรี,Nonthaburi Pier
+Bangkok,node,3885693769,100.396137,13.7064716,neighbourhood,หมู่บ้านทิพธนา,Muban Thip Thana
+Bangkok,node,4138453160,100.793542,13.7202188,neighbourhood,Pruksa Ville 60,
+Bangkok,node,4142529182,100.6049521,13.847692,neighbourhood,หมู่บ้านอารียา โมวา,Mu Ban Areeya Mova
+Bangkok,node,4252709894,100.5094814,13.8763833,neighbourhood,คิวบิส สนามบินน้ำ,
+Bangkok,node,4404513178,100.6422243,14.0540734,neighbourhood,หมู่บ้านธนาลักษณ์ 2,
+Bangkok,node,4404725082,100.6422966,14.0444501,neighbourhood,บ้าน บุณฑริก์,
+Bangkok,node,4404731420,100.6424811,14.0312924,neighbourhood,บ้านสราญสิริ,
+Bangkok,node,4404786473,100.6426683,14.0088908,neighbourhood,Pruksa Village 12,
+Bangkok,node,4406016546,100.6634012,14.0343688,neighbourhood,หมู่บ้านอนันดา รังสิต-คลอง 3,
+Bangkok,node,4406053008,100.6644254,14.011253,neighbourhood,Inizio 2 Rangsit Klong3 หมู่บ้าน,
+Bangkok,node,4406053018,100.6635406,14.0141406,neighbourhood,หมู่บ้านฉัตรหลวง14,
+Bangkok,node,4406053022,100.6615984,13.9948469,neighbourhood,ภัสสร 4 รังสิต-นครนายก (Passorn 4 Rangsit-Nakornnayok),
+Bangkok,node,4406069828,100.6644135,13.9977729,neighbourhood,Pruksa Village 9,
+Bangkok,node,4406069833,100.6607211,13.9946942,neighbourhood,Pruksa Ville 16 Rangsit-Ongkarak,
+Bangkok,node,4451454207,100.7063916,13.7013876,neighbourhood,หมู่บ้านกฤษดานคร48 (The Pride วงแหวน-อ่อนนุช),
+Bangkok,node,4471644795,100.6422045,14.0968132,neighbourhood,ban suan tawan dhamma (village),
+Bangkok,node,4483679106,100.4155983,13.8239535,neighbourhood,Narawadee vl.,

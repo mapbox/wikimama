@@ -48,30 +48,40 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
     // overpass
     var osmData;
     var wikiData;
-    queryOverpass(x, y, radius, function (err, d) {
-        if (err) {
-            return callback('overpass error', null);
-        }
-        osmData = d;
-
-        fs.writeFile(name + '_osm.csv', osmData, function (err) {
+    fs.exists(name + '_osm.csv', function(exists) {
+      if (!exists) {
+        queryOverpass(x, y, radius, function (err, d) {
             if (err) {
-                return callback('osm file write error', null);
+                return callback('overpass error', null);
             }
-        });
+            osmData = d;
 
-        // wikidata
-        queryWikidata(wikidata, radius, function (err, d) {
-            if (err) {
-                return callback('wiki error', null);
-            }
-            wikiData = d;
-
-            fs.writeFile(name + '_wiki.csv', wikiData, function (err) {
+            fs.writeFile(name + '_osm.csv', osmData, function (err) {
                 if (err) {
-                    return callback('wiki file write error', null);
+                    return callback('osm file write error', null);
                 }
             });
+        });
+      }
+    });
+
+    // wikidata
+    fs.exists(name + '_wiki.csv', function(exists) {
+      if (!exists) {
+            queryWikidata(wikidata, radius, function (err, d) {
+                if (err) {
+                    return callback('wiki error', null);
+                }
+                wikiData = d;
+
+                fs.writeFile(name + '_wiki.csv', wikiData, function (err) {
+                    if (err) {
+                        return callback('wiki file write error', null);
+                    }
+                });
+            });
+      }
+    });
 
         // then match
         var command = spawn('python', [__dirname + '/match.py', __dirname + '/' + name + '_osm.csv', __dirname + '/' + name + '_wiki.csv', threshold]);
@@ -95,7 +105,4 @@ function getData(name, x, y, wikidata, radius, threshold, callback) {
                 }
                 callback(null, result);
             });
-
-        });
-    });
 }

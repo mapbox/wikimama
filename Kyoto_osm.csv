@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 Kyoto,node,3694478078,136.0124491,35.1028173,suburb,中主町,Chuzucho,
 Kyoto,node,3694478079,136.0254327,35.0674685,suburb,野洲町,Yasucho,
 Kyoto,node,3743063128,135.2142671,35.0729584,suburb,御徒士町武家屋敷群,Okachimachibukeyashikigun,

@@ -23,9 +23,17 @@ batch-match.js uses the following pieces:
 
 Queries Overpass for OSM features around a particular coordinate. See query.ql for the query. Radius is in kilometers. Returns results as CSV.
 
+query-overpass can also be used as standalone script.
+
+`node query.js overpass cityName lon lat radius`
+
 #### query-wikidata.js
 
 Queries Wikidata for features around a particular Wikidata entity defined by a radius. 
+
+query-wikidata can also be used as standalone script.
+
+`node query.js wikidata cityName wikidataId radius`
 
 
 #### match.py

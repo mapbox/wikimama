@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 London,node,26269779,-0.586262,51.238464,suburb,Guildford Park,,
 London,node,26316976,0.4225135,51.5736978,suburb,Laindon,,
 London,node,26663137,-0.3101946,51.7455778,suburb,The Camp,,

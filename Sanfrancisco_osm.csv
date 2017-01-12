@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 San Francisco,node,140982569,-122.4725964,37.7806432,neighbourhood,Richmond District,,
 San Francisco,node,140982615,-122.4374715,37.8029843,neighbourhood,Marina District,,
 San Francisco,node,140982670,-122.4470139,37.7700462,neighbourhood,Haight-Ashbury,,

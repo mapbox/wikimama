@@ -24,17 +24,22 @@ input.on('line', function (line, lineCount) {
 
 input.on('end', function (err) {
     q.awaitAll(function (err, results) {
-      if (err) console.log(err);
-      var finalArray = [];
-      for (var i = 0; i < results.length; i++) {
-          finalArray = finalArray.concat(results[i]);
+      if (err) {
+        console.log(err);
+        return;
       }
-      var fields = ['city', 'distance', 'score', 'osm_name', 'place_label', 'place', 'location', 'osm_id'];
-      var csv = json2csv({ data: finalArray, fields: fields });
-      fs.writeFile('output.csv', csv, function(err) {
-        if (err) throw err;
-        console.log('file saved');
-      });
+      if (results) {
+        var fields = ['city', 'distance', 'score', 'osm_name', 'place_label', 'place', 'location', 'osm_id'];
+        var finalArray = [];
+        for (var i = 0; i < results.length; i++) {
+            finalArray = finalArray.concat(results[i]);
+        }
+        var csv = json2csv({ data: finalArray, fields: fields });
+        fs.writeFile('output.csv', csv, function(err) {
+          if (err) throw err;
+          console.log('file saved');
+        });
+      }
     });
 });
 
@@ -42,67 +47,101 @@ input.on('error', function(error) {
   console.log('input error', error);
 });
 
-function getData(name, x, y, wikidata, radius, threshold, callback) {
-
-    // console.log('getData', name);
-    // overpass
-    var osmData;
-    var wikiData;
-    fs.exists(name + '_osm.csv', function(exists) {
-      if (!exists) {
-        queryOverpass(x, y, radius, function (err, d) {
-            if (err) {
-                return callback('overpass error', null);
-            }
-            osmData = d;
-
-            fs.writeFile(name + '_osm.csv', osmData, function (err) {
-                if (err) {
-                    return callback('osm file write error', null);
-                }
-            });
-        });
-      }
-    });
-
-    // wikidata
+function queryWikidataClient(name, wikidata, radius, callback) {
     fs.exists(name + '_wiki.csv', function(exists) {
       if (!exists) {
             queryWikidata(wikidata, radius, function (err, d) {
                 if (err) {
                     return callback('wiki error', null);
                 }
-                wikiData = d;
+                var wikiData = d;
 
                 fs.writeFile(name + '_wiki.csv', wikiData, function (err) {
                     if (err) {
                         return callback('wiki file write error', null);
                     }
+                    return callback();
                 });
             });
+      } else {
+        return callback();
       }
     });
-
-        // then match
-        var command = spawn('python', [__dirname + '/match.py', __dirname + '/' + name + '_osm.csv', __dirname + '/' + name + '_wiki.csv', threshold]);
-        var result = '';
-            command.stdout.on('data', function (data) {
-                result += data.toString();
-            });
-            command.stderr.on('data', function (trace) {
-              process.stderr.write(trace.toString());
-            });
-            command.on('close', function (code) {
-                if (code !== 0) {
-                  return callback('matching script exited', null);
-                }
-                // dont remove temp files for now
-                // fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
-                // fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
-                result = JSON.parse(result);
-                for (var i = 0; i < result.length; i++) {
-                    result[i]['city'] = name;
-                }
-                callback(null, result);
-            });
 }
+
+function queryOverpassClient(name, x, y, radius, callback) {
+    fs.exists(name + '_osm.csv', function(exists) {
+      if (!exists) {
+        queryOverpass(x, y, radius, function (err, d) {
+            if (err) {
+                return callback('overpass error', null);
+            }
+            var osmData = d;
+
+            fs.writeFile(name + '_osm.csv', osmData, function (err) {
+                if (err) {
+                    return callback('osm file write error', null);
+                }
+                return callback();
+            });
+        });
+      } else {
+        return callback();
+      }
+    });
+}
+
+function matchWikiOsmClient(name, threshold, callback) {
+// then match
+var command = spawn('python', [__dirname + '/match.py', __dirname + '/' + name + '_osm.csv', __dirname + '/' + name + '_wiki.csv', threshold]);
+var result = '';
+    command.stdout.on('data', function (data) {
+        result += data.toString();
+    });
+    command.stderr.on('data', function (trace) {
+      process.stderr.write(trace.toString());
+    });
+    command.on('close', function (code) {
+        if (code !== 0) {
+          return callback('matching script exited', null);
+        }
+        // dont remove temp files for now
+        // fs.unlinkSync(__dirname + '/' + name + '_osm.csv');
+        // fs.unlinkSync(__dirname + '/' + name + '_wiki.csv');
+        if (result) {
+          result = JSON.parse(result);
+          for (var i = 0; i < result.length; i++) {
+              result[i]['city'] = name;
+          }
+          console.log("result", result);
+          callback(null, result);
+        } else {
+          callback();
+        }
+    });
+}
+
+function getData(name, x, y, wikidata, radius, threshold, callback) {
+
+    // overpass
+          queryOverpassClient(name, x, y, radius, function(err) {
+            if (err) {
+              return callback(err);
+            } else {
+              queryWikidataClient(name, wikidata, radius, function(err) {
+                if (err) {
+                  return callback(err);
+                } else {
+                  matchWikiOsmClient(name, threshold, function (err, results) {
+                    if (err) {
+                      return callback(err);
+                    } else {
+                      return callback(null, results);
+                    }
+                  });
+                }
+              });
+            }
+          });
+}
+

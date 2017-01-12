@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 Paris,node,250833571,2.5109894,48.8728781,suburb,Plateau d'Avron,,
 Paris,node,252815182,2.3500629,48.8275867,neighbourhood,Butte aux Cailles,,
 Paris,node,264913715,2.5737252,48.8718053,suburb,Alsace-Lorraine,,

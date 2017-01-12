@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 Rome,node,259730830,12.2364493,41.8770052,suburb,Maccarese Scalo,,
 Rome,node,261418854,12.5199218,41.9931533,neighbourhood,Belpoggio,,
 Rome,node,262113961,12.4219782,41.8359144,neighbourhood,Colle del Sole,,

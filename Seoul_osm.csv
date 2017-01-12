@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 Seoul,node,415153471,126.7065108,37.5293934,suburb,효성동,Hyoseong-dong,
 Seoul,node,415153473,126.7080961,37.518833,suburb,청천동,Cheongcheondong,
 Seoul,node,415153475,126.72676,37.51541,suburb,갈산동,Galsan-dong,

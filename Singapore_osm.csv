@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 Singapore,node,254073046,103.7034552,1.4924464,neighbourhood,Kampung Pengkalan Rinting,,
 Singapore,node,1556659251,103.9542015,1.3432581,suburb,Simei,Simei,
 Singapore,node,1556659254,103.950796,1.3742214,suburb,Pasir Ris,Pasir Ris,

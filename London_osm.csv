@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 London,node,196021,-0.1748844,51.6301762,suburb,Whetstone,,
 London,node,196694,-0.1990538,51.5819126,suburb,Temple Fortune,,
 London,node,200088,-0.158614,51.6128484,suburb,Friern Barnet,,

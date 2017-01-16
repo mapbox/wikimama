@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 San Francisco,node,140982847,-122.3913596,37.7340974,neighbourhood,Bayview District,,
 San Francisco,node,140983101,-122.4530272,37.7229872,neighbourhood,Ingleside,,
 San Francisco,node,140983243,-122.4133047,37.7063208,neighbourhood,Bayshore,,

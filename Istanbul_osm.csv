@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 Istanbul,node,26505319,29.394364,40.820121,suburb,Güzeltepe,,
 Istanbul,node,251355449,29.0254706,40.9811687,suburb,Moda,,
 Istanbul,node,251358399,29.0363716,41.0621713,suburb,Kuruçeşme,,

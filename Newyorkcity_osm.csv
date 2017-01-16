@@ -1,4 +1,4 @@
-City,type,id,lon,lat,place,name,name:en,wikidata
+"City","type","id","lon","lat","place","name","name:en","wikidata"
 New York City,node,158798651,-74.1143087,40.5526053,neighbourhood,Oakwood Beach,,
 New York City,node,158798812,-73.7354097,40.6620479,neighbourhood,Rosedale,,
 New York City,node,158799290,-73.9348597,40.6212155,neighbourhood,Flatlands,,

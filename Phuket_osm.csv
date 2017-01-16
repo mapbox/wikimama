@@ -1,12 +1,7 @@
-"City","type","id","lon","lat","place","name","name:en","wikidata"
-Phuket,node,31040694,98.3390847,7.8178617,suburb,ฉลอง,Chalong,
-Phuket,node,313346979,98.2958328,7.8460075,suburb,กะรน,Karon,
-Phuket,node,313347050,98.2837676,7.9561463,suburb,กมลา,Kamala,
-Phuket,node,978976474,98.2996584,8.1708822,suburb,ไม้ขาว,Mai Khao,
+City,type,id,lon,lat,place,name,name:en,wikidata
 Phuket,node,2079695941,98.2983685,7.8210348,suburb,หาดกะตะใหญ่,Kata Yai,
 Phuket,node,2132175909,98.3527179,7.9831812,neighbourhood,ตะวันเพลส,Tawan Place,
 Phuket,node,2420998961,98.3057706,7.7767879,suburb,หาดในหาน,Nai Harn,
-Phuket,node,2420998962,98.3237002,7.7753559,suburb,ราไวย์,Rawai,
 Phuket,node,2421003922,98.292826,8.0116924,suburb,บางเทา,,
 Phuket,node,2421004322,98.2790818,7.9758217,suburb,Surin,,
 Phuket,node,2421007678,98.278862,8.0593565,suburb,หาดในทอน,Nai Thon,

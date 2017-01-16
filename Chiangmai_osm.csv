@@ -1,4 +1,4 @@
-"City","type","id","lon","lat","place","name","name:en","wikidata"
+City,type,id,lon,lat,place,name,name:en,wikidata
 Chiang Mai,node,336232672,99.0162223,18.8123096,neighbourhood,,Srihaanan,
 Chiang Mai,node,852775405,99.0405674,18.7593489,neighbourhood,หมู่บ้านเฮอริเทจ,The Heritage,
 Chiang Mai,node,938216235,99.0497891,18.7412798,neighbourhood,The Castle,,
@@ -41,6 +41,7 @@ Chiang Mai,node,2631950838,99.0643101,18.745707,neighbourhood,,City Home Place 4
 Chiang Mai,node,2637889892,99.0358127,18.8279967,neighbourhood,รีเจ้นท์ 2,Ri Chen 2,
 Chiang Mai,node,2641486457,99.0764979,18.8410597,neighbourhood,เชียงใหม่ ฟลอร่าวิลล์,Chiangmai Floraville,
 Chiang Mai,node,2641511945,99.1112071,18.8635988,neighbourhood,บ้านสวนริมธาร,Ban Suan Rim Than,
+Chiang Mai,node,2642976427,98.9809219,18.8032374,neighbourhood,ช้างเผือก,Chang Phuak,
 Chiang Mai,node,2650337832,99.0562374,18.7482287,neighbourhood,ซิตี้โฮมเพลส,City Home Place 2,
 Chiang Mai,node,2650799464,99.0312472,18.814768,neighbourhood,ซีริน วิลล์,Serene Ville,
 Chiang Mai,node,2650800720,99.0350072,18.8177555,neighbourhood,รีเจ้นท์,Ri Chen,

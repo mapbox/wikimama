@@ -1,4 +1,4 @@
-"City","type","id","lon","lat","place","name","name:en","wikidata"
+City,type,id,lon,lat,place,name,name:en,wikidata
 Seoul,node,415153471,126.7065108,37.5293934,suburb,효성동,Hyoseong-dong,
 Seoul,node,415153473,126.7080961,37.518833,suburb,청천동,Cheongcheondong,
 Seoul,node,415153475,126.72676,37.51541,suburb,갈산동,Galsan-dong,
@@ -41,8 +41,6 @@ Seoul,node,415154869,126.62572,37.47338,neighbourhood,송학동3가,Songhakdong 
 Seoul,node,415154874,126.62333,37.47065,neighbourhood,해안동4가,Haeandong 4-ga,
 Seoul,node,415154876,126.6246,37.472,neighbourhood,관동3가,Gwandong 3(sam)-ga,
 Seoul,node,415154885,126.64065,37.47085,neighbourhood,창영동,Changyeong-dong,
-Seoul,node,415154886,126.63928,37.4725,neighbourhood,금곡동,Geumgok-dong,
-Seoul,node,415154910,126.7224489,37.4895713,suburb,부평동,Bupyeong-dong,
 Seoul,node,415154911,126.7380537,37.4937932,suburb,부개동,Bugae-dong,
 Seoul,node,415154912,126.7479615,37.4808392,suburb,일신동,Ilsin-dong,
 Seoul,node,415154914,126.70226,37.49934,suburb,산곡동,Sangokdong,

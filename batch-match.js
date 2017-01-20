@@ -13,12 +13,12 @@ var q = d3.queue(2);
 
 input.on('line', function (line, lineCount) {
   var line = line.split(',');
-  var name = line[0], 
-  x = Number(line[1]),
-  y = Number(line[2]),
-  wikidata = line[3],
-  radius = Number(line[4]),
-  threshold = Number(line[5]);
+  var name = line[0].trim(),
+  x = Number(line[1].trim()),
+  y = Number(line[2].trim()),
+  wikidata = line[3].trim(),
+  radius = Number(line[4].trim()),
+  threshold = Number(line[5].trim());
   q.defer(getData, name, x, y, wikidata, radius, threshold);
 });
 

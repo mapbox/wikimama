@@ -17,6 +17,26 @@ batch-match.js takes a CSV of places and queries Overpass for OSM features, then
 
 `node batch-match.js --file input.csv`
 
+
+
+`input.csv` is expected in this format:
+
+`City, longitude, latitude, radius, threshold distance`
+
+**City**: name of the city for which the neighbourhoods around it are looked for
+
+**Longitude**: Longitude value at the centre of the city
+
+**Latitude**: Latitude value at the centre of the city
+
+**Radius**: Distance to query from the centre of the city
+
+**Threshold distance**: Offset distance (if any) between OSM and Wikidata. Usually 5km would cover even if there are errors in the locations between both the platforms.
+
+*Note*: See an [example](https://github.com/mapbox/wikimama/blob/master/test/fixture.csv) input file under test folder. 
+
+
+
 batch-match.js uses the following pieces:
 
 #### query-overpass.js

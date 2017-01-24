@@ -29,7 +29,7 @@ input.on('end', function (err) {
       for (var i = 0; i < results.length; i++) {
           finalArray = finalArray.concat(results[i]);
       }
-      var fields = ['city', 'distance', 'score', 'osm_name', 'place_label', 'place', 'location', 'osm_id'];
+      var fields = ['city', 'distance', 'score', 'osm_name', 'place_label', 'wikidata_qid', 'josm_url', 'location', 'osm_id', 'osm_type'];
       var csv = json2csv({ data: finalArray, fields: fields });
       fs.writeFile('output.csv', csv, function(err) {
         if (err) throw err;

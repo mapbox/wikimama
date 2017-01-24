@@ -31,6 +31,7 @@ function queryOverpass(lon, lat, radius, callback) {
         data.features.forEach(function (f) {
           var interestedProps = {
             'id': f.properties.id,
+            'type': f.properties.type,
             'lon': f.geometry.coordinates[0],
             'lat': f.geometry.coordinates[1],
             'place': f.properties.place,
@@ -43,7 +44,7 @@ function queryOverpass(lon, lat, radius, callback) {
           d.push(interestedProps);
         });
 
-        callback(null, json2csv({'data': d, 'fields': ['id', 'lon', 'lat', 'place', 'name', 'name:en', 'name:zh', 'wikipedia', 'wikidata']}));
+        callback(null, json2csv({'data': d, 'fields': ['id', 'type', 'lon', 'lat', 'place', 'name', 'name:en', 'name:zh', 'wikipedia', 'wikidata']}));
 
       }, {'overpassUrl': 'http://overpass-cfn-production.tilestream.net/api/interpreter'});
   }

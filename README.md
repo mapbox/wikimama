@@ -21,7 +21,7 @@ batch-match.js takes a CSV of places and queries Overpass for OSM features, then
 
 `input.csv` is expected in this format:
 
-`City, longitude, latitude, radius, threshold distance`
+`City, longitude, latitude, wikidata_id, radius, threshold distance`
 
 **City**: name of the city for which the neighbourhoods around it are looked for
 
@@ -29,9 +29,11 @@ batch-match.js takes a CSV of places and queries Overpass for OSM features, then
 
 **Latitude**: Latitude value at the centre of the city
 
+**wikidata_id**: Wikidata id of the city
+
 **Radius**: Distance to query from the centre of the city
 
-**Threshold distance**: Offset distance (if any) between OSM and Wikidata. Usually 5km would cover even if there are errors in the locations between both the platforms.
+**Threshold distance**: Maximum distance around osm feature which needs to be looked for potential wikidata matches. For example, when looking for a match for a neighbourhood, this value could go low upto 2 km. But when looking for a match for a country or so, this value can go high upto 500 km.
 
 *Note*: See an [example](https://github.com/mapbox/wikimama/blob/master/test/fixture.csv) input file under test folder. 
 
@@ -51,3 +53,17 @@ Queries Wikidata for features around a particular Wikidata entity defined by a r
 #### match.py
 
 Take OSM features and wikidata features and uses distance as well as fuzzy name matching to predict potential matches and generates a CSV for manual review.
+
+One can also use the above three scripts in a standalone manner.
+
+#### query.js
+
+For querying wikidata, use the following command.  It will generate city_name_wiki.csv.
+`node query.js wikidata city_name wikidata_id radius`
+
+For querying overpass, use the following command.  It will generate city_name_osm.csv.
+`node query.js overpass city_name longitude latitude radius`
+
+For creating match between osm csv and wiki csv, use the following command.
+`python match.py osmCSV wikiCSV Threshold distance`
+

@@ -59,11 +59,14 @@ One can also use the above three scripts in a standalone manner.
 #### query.js
 
 For querying wikidata, use the following command.  It will generate city_name_wiki.csv.
+
 `node query.js wikidata city_name wikidata_id radius`
 
 For querying overpass, use the following command.  It will generate city_name_osm.csv.
+
 `node query.js overpass city_name longitude latitude radius`
 
 For creating match between osm csv and wiki csv, use the following command.
+
 `python match.py osmCSV wikiCSV Threshold distance`
 

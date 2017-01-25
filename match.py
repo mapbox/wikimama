@@ -34,7 +34,7 @@ def csvReader(csv_file):
 
 reader_osm = csvReader(input_osm)
 
-fieldnames = ['score','osm_name', 'osm_id', 'osm_type', 'distance','place_label', 'wikidata_qid', 'josm_url', 'location']
+fieldnames = ['score','osm_name', 'osm_id', 'osm_type', 'distance','place_label', 'wikidata_qid', 'wikidata_url', 'josm_url', 'location', 'place']
 
 count = 0
 final = []
@@ -78,6 +78,7 @@ for osm_l in reader_osm:
                     entry['osm_name'] = name
                     entry['osm_id'] = osm_l['id']
                     entry['osm_type'] = osm_l['type']
+                    entry['place'] = osm_l['place']
                     entry['josm_url'] = 'http://localhost:8111/load_object?new_layer=true&objects=' + entry['osm_type'][0] + entry['osm_id'] + '&addtags=wikidata=' + entry['wikidata_qid']
                     if osm_l['type'][0] == 'r':
                         entry['josm_url'] += '&relation_members=true'

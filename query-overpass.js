@@ -34,7 +34,7 @@ function queryOverpass(lon, lat, radius, callback) {
             'type': f.properties.type,
             'lon': f.geometry.coordinates[0],
             'lat': f.geometry.coordinates[1],
-            'place': f.properties.place,
+            'place': f.properties.tags.hasOwnProperty('place') ? f.properties.tags.place : '',
             'name': f.properties.tags.hasOwnProperty('name') ? f.properties.tags.name : '',
             'name:en': f.properties.tags.hasOwnProperty('name:en') ? f.properties.tags['name:en'] : '',
             'name:zh': f.properties.tags.hasOwnProperty('name:zh') ? f.properties.tags['name:zh'] : '',

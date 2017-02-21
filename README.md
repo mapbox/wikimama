@@ -1,22 +1,20 @@
 # OSM <-> Wikidata matching
 
-This repo contains scripts to aid in manually matching OSM IDs to Wikidata IDs.
-
-### Requirement
-Node version >= 6
+This repo contains scripts to aid in manually matching OSM IDs to Wikidata IDs. See https://wiki.openstreetmap.org/wiki/Wikidata for details.
 
 ### Setup
 
-1. `npm link`
-2. `pip install -r requirements.txt`
-3. `match-wikidata-osm --file input.csv`
+Use node version >= 6
+
+- `npm link`
+- `pip install -r requirements.txt`
+- `match-wikidata-osm --file input.csv`
 
 #### batch-match.js
 
 batch-match.js takes a CSV of places and queries Overpass for OSM features, then Wikidata for neighboring entities, runs a match based on geographic distance and levenshtein distance. It finally writes the possible matches into a CSV for manual verification.
 
 `node batch-match.js --file input.csv`
-
 
 
 `input.csv` is expected in this format:

@@ -4,26 +4,19 @@ var json2csv = require('json2csv');
 var fields = ['wikidata_url', 'wikidata_qid', 'place_label', 'location'];
 var uniqBy = require('lodash.uniqby');
 
-function queryWikidata(wikidataId, radius, callback) {
+function queryWikidata(callback) {
 
   var sparql = `
   #defaultView:Map
-  SELECT ?place ?placeLabel ?location
-  WHERE
+  #defaultView:BubbleChart
+  SELECT DISTINCT ?place ?placeLabel ?location
+  WHERE 
   {
-    hint:Query hint:optimizer "None" .
-    # Berlin coordinates
-    wd:${wikidataId} wdt:P625 ?singLoc . 
-    SERVICE wikibase:around { 
-      ?place wdt:P625 ?location . 
-      bd:serviceParam wikibase:center ?singLoc . 
-      bd:serviceParam wikibase:radius ${radius} . 
-    } 
-    # Is a human settlement
-    ?place wdt:P31/wdt:P279* wd:Q486972 .
-    SERVICE wikibase:label {
-      bd:serviceParam wikibase:language "en" . 
-    }
+    ?place wdt:P31* wd:Q515 .
+    ?place wdt:P625 ?location .
+     SERVICE wikibase:label {
+        bd:serviceParam wikibase:language "en" . 
+      }
   }
   `;
 

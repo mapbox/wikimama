@@ -22,9 +22,9 @@ The script would start processing the lists and would generate `output.csv`
 
 batch-match.js looks for `cities_osm.geojson`. If not found generates a CSV of cities by querying OSM through overpass query and queries Wikidata for cities using SPARQL query. It runs a match based on geographic distance and levenshtein distance. It finally writes the possible matches into a CSV for manual verification.`
 
-**Threshold distance**: Maximum distance around osm feature which needs to be looked for potential wikidata matches. For example, when looking for a match for a neighbourhood, this value could go low upto 2 km. But when looking for a match for a country or so, this value can go high upto 500 km. The suggested value for cities is 50 km.
+**Threshold distance**: Maximum distance around osm feature which needs to be looked for potential wikidata matches. For example, when looking for a match for a neighbourhood, this value could go low upto 2 km. But when looking for a match for a country or so, this value can go high upto 100 km. The suggested value for cities is 50 km.
 
-*Note*: See an [example](https://github.com/mapbox/wikimama/blob/master/test/fixture.csv) input file under test folder. 
+Modify the `input.csv` with the required threshold value. By default it has been set to 50km for cities.
 
 
 

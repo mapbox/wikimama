@@ -45,9 +45,9 @@ for osm_l in reader_osm:
     choices = []
     mapping = {}
     if osm_l['wikidata'] == "":
+        scored = []
         reader_wiki = csvReader(input_wiki)
         for wiki_l in reader_wiki:
-            scored = []
             place_label = wiki_l['place_label']
             location = wiki_l['location']
             try:

@@ -45,15 +45,19 @@ for osm_l in reader_osm:
     choices = []
     mapping = {}
     if osm_l['wikidata'] == "":
+        scored = []
         reader_wiki = csvReader(input_wiki)
         for wiki_l in reader_wiki:
             place_label = wiki_l['place_label']
             location = wiki_l['location']
-            pt = shapely.wkt.loads(location)
-            gt = geojson.Feature(geometry=pt, properties={})
-            wiki_geojson = shapely.geometry.shape(gt.geometry)
-            distance = vincenty((osm_l['lon'], osm_l['lat']),(wiki_geojson.centroid.x, wiki_geojson.centroid.y)).km
-            wiki_l["distance"] = distance
+            try:
+                pt = shapely.wkt.loads(location)
+                gt = geojson.Feature(geometry=pt, properties={})
+                wiki_geojson = shapely.geometry.shape(gt.geometry)
+                distance = vincenty((osm_l['lon'], osm_l['lat']),(wiki_geojson.centroid.x, wiki_geojson.centroid.y)).km
+                wiki_l["distance"] = distance
+            except:
+                wiki_l["distance"] = 1000
             if distance <= threshold:
                 wiki_arr.append(wiki_l)
                 choices.append(place_label)

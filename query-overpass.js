@@ -19,7 +19,7 @@ function queryOverpass(lon, lat, radius, callback) {
     // wsen
     var bbox = turf.bbox(buffer);
     // swne
-    var overpassBbox = [bbox[1], bbox[0], bbox[3], bbox[2]].toString();
+    var overpassBbox = [bbox[0], bbox[1], bbox[2], bbox[3]].toString();
     var query = util.format(query, overpassBbox, overpassBbox);
     overpass(query, function(error, data) {
       if (error) {

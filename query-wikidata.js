@@ -15,7 +15,7 @@ function queryWikidata(lon, lat, radius, callback) {
     # Berlin coordinates
     SERVICE wikibase:around { 
       ?place wdt:P625 ?location . 
-      bd:serviceParam wikibase:center Point(${lon} ${lat})^^geo:wktLiteral . 
+      bd:serviceParam wikibase:center “Point(${lon} ${lat})“^^geo:wktLiteral .
       bd:serviceParam wikibase:radius ${radius} . 
     } 
     # Is a human settlement

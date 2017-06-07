@@ -4,7 +4,7 @@ var json2csv = require('json2csv');
 var fields = ['wikidata_url', 'wikidata_qid', 'place_label', 'location'];
 var uniqBy = require('lodash.uniqby');
 
-function queryWikidata(wikidataId, radius, callback) {
+function queryWikidata(lon, lat, radius, callback) {
 
   var sparql = `
   #defaultView:Map
@@ -13,10 +13,9 @@ function queryWikidata(wikidataId, radius, callback) {
   {
     hint:Query hint:optimizer "None" .
     # Berlin coordinates
-    wd:${wikidataId} wdt:P625 ?singLoc . 
     SERVICE wikibase:around { 
       ?place wdt:P625 ?location . 
-      bd:serviceParam wikibase:center ?singLoc . 
+      bd:serviceParam wikibase:center Point(${lon} ${lat})^^geo:wktLiteral . 
       bd:serviceParam wikibase:radius ${radius} . 
     } 
     # Is a human settlement
@@ -26,6 +25,8 @@ function queryWikidata(wikidataId, radius, callback) {
     }
   }
   `;
+
+  console.log(sparql);
 
   var url = wdk.sparqlQuery(sparql);
   request(url, function (err, response) {

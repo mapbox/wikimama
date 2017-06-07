@@ -1,14 +1,16 @@
 var queryWikidata = require('./query-wikidata');
 var queryOverpass = require('./query-overpass');
 var fs = require('fs');
+var argv = require('minimist')(process.argv.slice(2));
 
-var module = process.argv[2];
-var name = process.argv[3];
+var module = argv.module;
+var name = argv.name;
 
 if (module === "wikidata") {
-    var wikidataId = process.argv[4];
-    var radius = process.argv[5];
-    queryWikidata(wikidataId, radius, function (err, d) {
+    var lon = argv.lon;
+    var lat = argv.lat;
+    var radius = argv.radius;
+    queryWikidata(lon, lat, radius, function (err, d) {
         if (err) {
             return callback('wiki error', null);
         }
@@ -20,9 +22,9 @@ if (module === "wikidata") {
         });
     });
 } else if (module === "overpass") {
-    var x = Number(process.argv[4]);
-    var y = Number(process.argv[5]);
-    var radius = Number(process.argv[6]);
+    var x = Number(argv.x);
+    var y = Number(argv.y);
+    var radius = Number(argv.radius);
 
     queryOverpass(x, y, radius, function (err, d) {
         if (err) {

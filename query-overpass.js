@@ -46,7 +46,7 @@ function queryOverpass(lon, lat, radius, callback) {
 
         callback(null, json2csv({'data': d, 'fields': ['id', 'type', 'lon', 'lat', 'place', 'name', 'name:en', 'name:zh', 'wikipedia', 'wikidata']}));
 
-      }, {'overpassUrl': 'http://overpass-cfn-production.tilestream.net/api/interpreter'});
+      }, {'overpassUrl': 'https://overpass.maptime.in/api/interpreter'});
   }
 
   module.exports = queryOverpass;

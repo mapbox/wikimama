@@ -10,12 +10,12 @@ if (module === "wikidata") {
     var radius = process.argv[5];
     queryWikidata(wikidataId, radius, function (err, d) {
         if (err) {
-            return callback('wiki error', null);
+            console.log('wiki error');
         }
         var wikiData = d;
         fs.writeFile(name + '_wiki.csv', wikiData, function (err) {
             if (err) {
-                return callback('wiki file write error', null);
+                console.log('wiki file write error');
             }
         });
     });
@@ -26,13 +26,13 @@ if (module === "wikidata") {
 
     queryOverpass(x, y, radius, function (err, d) {
         if (err) {
-            return callback('overpass error', null);
+            console.log('overpass error');
         }
         var osmData = d;
 
         fs.writeFile(name + '_osm.csv', osmData, function (err) {
             if (err) {
-                return callback('osm file write error', null);
+                console.log('osm file write error');
             }
         });
     });

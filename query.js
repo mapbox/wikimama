@@ -7,7 +7,7 @@ var module = process.argv[2];
 if (module === "wikidata") {
     queryWikidata(function (err, d) {
         if (err) {
-            return ('wiki error', null);
+            return callback('wiki error', null);
         }
         var wikiData = d;
         fs.writeFile('hi_wiki.csv', wikiData, function (err) {

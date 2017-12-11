@@ -66,26 +66,21 @@ for osm_l in reader_osm:
                 else:
                     mapping[place_label] = []
                     mapping[place_label].append(wiki_l)
-        name = ""
-        if 'name:en' in osm_l and osm_l['name:en'] != "":
-            osm_l['name:en'] = osm_l['name:en'].decode('utf-8')
-            scored = process.extract(osm_l['name:en'], choices, limit=5)
-            name = osm_l['name:en']
-        elif 'name' in osm_l and osm_l['name'] != "":
-            osm_l['name'] = osm_l['name'].decode('utf-8')
-            scored = process.extract(osm_l['name'], choices, limit=5)
-            name = osm_l['name']
+        
+        osm_l['name'] = osm_l['name'].decode('utf-8')
+        scored = process.extract(osm_l['name'], choices, limit=5)
+        name = osm_l['name']
         if len(scored) > 0:
             for score in scored:
                 for entry in mapping[score[0]]:
                     entry['score'] = score[1]
                     entry['osm_name'] = name
-                    entry['osm_id'] = osm_l['id']
-                    entry['osm_type'] = osm_l['type']
-                    entry['place'] = osm_l['place']
-                    entry['josm_url'] = 'http://localhost:8111/load_object?new_layer=true&objects=' + entry['osm_type'][0] + entry['osm_id'] + '&addtags=wikidata=' + entry['wikidata_qid']
-                    if osm_l['type'][0] == 'r':
-                        entry['josm_url'] += '&relation_members=true'
+                    # entry['osm_id'] = osm_l['id']
+                    # entry['osm_type'] = osm_l['type']
+                    # entry['place'] = osm_l['place']
+                    # entry['josm_url'] = 'http://localhost:8111/load_object?new_layer=true&objects=' + entry['osm_type'][0] + entry['osm_id'] + '&addtags=wikidata=' + entry['wikidata_qid']
+                    # if osm_l['type'][0] == 'r':
+                    #     entry['josm_url'] += '&relation_members=true'
                 final.extend(mapping[score[0]])
 if len(final) > 0:
     a = np.array(final)

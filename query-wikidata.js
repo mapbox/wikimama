@@ -1,30 +1,20 @@
 var wdk = require('wikidata-sdk');
 var request = require('request');
 var json2csv = require('json2csv');
-var fields = ['wikidata_url', 'wikidata_qid', 'place_label', 'location'];
+var fields = ['wikidata_url', 'wikidata_qid', 'place_label', 'location', 'instance', 'iid'];
 var uniqBy = require('lodash.uniqby');
 
-function queryWikidata(wikidataId, radius, callback) {
+function queryWikidata(callback) {
 
   var sparql = `
-  #defaultView:Map
-  SELECT ?place ?placeLabel ?location
-  WHERE
-  {
-    hint:Query hint:optimizer "None" .
-    # Berlin coordinates
-    wd:${wikidataId} wdt:P625 ?singLoc . 
-    SERVICE wikibase:around { 
-      ?place wdt:P625 ?location . 
-      bd:serviceParam wikibase:center ?singLoc . 
-      bd:serviceParam wikibase:radius ${radius} . 
-    } 
-    # Is a human settlement
-    ?place wdt:P31/wdt:P279* wd:Q486972 .
-    SERVICE wikibase:label {
-      bd:serviceParam wikibase:language "en" . 
-    }
+  SELECT ?item ?itemLabel ?instance_of ?instance_ofLabel ?coordinate_location WHERE {
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "ru". }
+    ?item (wdt:P31/wdt:P279*) wd:Q486972.
+    OPTIONAL { ?item wdt:P31 ?instance_of. }
+    OPTIONAL { ?item wdt:P625 ?coordinate_location. }
+    ?item wdt:P17 wd:Q159.
   }
+  LIMIT 500
   `;
 
   var url = wdk.sparqlQuery(sparql);
@@ -37,13 +27,15 @@ function queryWikidata(wikidataId, radius, callback) {
         var bindings = body['results']['bindings'];
         var count = 0;
         bindings.forEach(function (binding) {
-          bindings[count]['wikidata_url'] = binding['place']['value'];
-          bindings[count]['wikidata_qid'] = binding['place']['value'].split('entity/')[1];
-          bindings[count]['place_label'] = binding['placeLabel']['value'];
-          bindings[count]['location'] = binding['location']['value'];
+          bindings[count]['wikidata_url'] = binding['item']['value'];
+          bindings[count]['wikidata_qid'] = binding['item']['value'].split('entity/')[1];
+          bindings[count]['place_label'] = binding['itemLabel']['value'];
+          bindings[count]['location'] = binding['coordinate_location']['value'];
+          bindings[count]['iid'] = binding['instance_of']['value'];
+          bindings[count]['instance'] = binding['instance_ofLabel']['value'];
           count += 1;
         });
-        var uniqueBindings = uniqBy(bindings, 'place');
+        var uniqueBindings = uniqBy(bindings, 'item');
         var result = json2csv({data: uniqueBindings, fields: fields});
         callback(null, result);
       } catch (err) {

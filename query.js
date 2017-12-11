@@ -3,17 +3,14 @@ var queryOverpass = require('./query-overpass');
 var fs = require('fs');
 
 var module = process.argv[2];
-var name = process.argv[3];
 
 if (module === "wikidata") {
-    var wikidataId = process.argv[4];
-    var radius = process.argv[5];
-    queryWikidata(wikidataId, radius, function (err, d) {
+    queryWikidata(function (err, d) {
         if (err) {
-            return callback('wiki error', null);
+            return ('wiki error', null);
         }
         var wikiData = d;
-        fs.writeFile(name + '_wiki.csv', wikiData, function (err) {
+        fs.writeFile('hi_wiki.csv', wikiData, function (err) {
             if (err) {
                 return callback('wiki file write error', null);
             }

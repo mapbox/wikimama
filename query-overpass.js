@@ -1,5 +1,5 @@
 /*
-Queries Overpass for OSM features. See query.ql for the query. Radius is in kilometers. Returns results as CSV.
+Queries Overpass for OSM features. See query.overpassql for the query. Radius is in kilometers. Returns results as CSV.
 */
 
 var overpass = require('query-overpass');
@@ -11,7 +11,7 @@ var argv = require('minimist')(process.argv.slice(2));
 
 function queryOverpass(lon, lat, radius, callback) {
 
-  var query = fs.readFileSync(__dirname + '/query.ql').toString();
+  var query = fs.readFileSync(__dirname + '/query.overpassql').toString();
   var x = lon;
   var y = lat;
   var point = turf.point([x, y]);

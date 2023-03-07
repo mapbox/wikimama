@@ -41,7 +41,7 @@ batch-match.js uses the following pieces:
 
 #### query-overpass.js
 
-Queries Overpass for OSM features around a particular coordinate. See query.ql for the query. Radius is in kilometers. Returns results as CSV.
+Queries Overpass for OSM features around a particular coordinate. See `query.overpassql` for the query. Radius is in kilometers. Returns results as CSV.
 
 #### query-wikidata.js
 
